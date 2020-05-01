@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+<!-- Custom styles for this template -->
+<link href= "{{ url_for('static', filename = 'css/starter-template.css') }}"" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% if "username" not in session %}
+<main role="main" class="container">
+    <div class="starter-template">
+        <h1>Landing Page</h1>
+        <p class="lead">This is where logged out user will be redirected.</p>
+      </div>
+</main><!-- /.container -->
+{% else %}
+<main role="main" class="container">
+    <div class="starter-template">
+        <h1>You are now logged in</h1>
+        <p class="lead">This is where the Question and answer should be displayed.<br> You can do that...</p>
+      </div>
+</main><!-- /.container -->
+{% endif %}
+  {% endblock %}

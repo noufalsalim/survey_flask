@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="gr__getbootstrap_com" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Know your friend - Survey</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="{{ url_for('static', filename = 'css/bootstrap.css') }}" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    {% block head %}{% endblock %}
+  </head>
+
+  <body class="text-center" data-gr-c-s-loaded="true">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Know Your Friend</a>
+        {% if "username" in session %}
+            <form action="{{ url_for('logout') }}">
+                <button class="btn btn-outline-success pull-right" type="submit">Log Out</button>
+            </form>]
+        {% else %}
+            <form action="{{ url_for('signup') }}">
+                <button class="btn btn-outline-success pull-right" type="submit">Sign Up</button>
+            </form>
+            <form action="{{ url_for('login') }}">
+                <button class="btn btn-outline-success pull-right" type="submit">Log In</button>
+            </form>
+        {% endif %}
+    </nav>
+
+{% block body %}{% endblock %}
+
+<script src="{{ url_for('static', filename= 'js/jquery-3.js') }}"" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <!-- <script>window.jQuery || document.write('<script src="{{ url_for('static', filename = 'js/jquery.slim.min.js') }}" ><\/script>')</script> -->
+      <script src="{{ url_for('static', filename = 'js/bootstrap.js') }}" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+
+</body></html>
